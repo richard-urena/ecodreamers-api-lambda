@@ -1,8 +1,6 @@
-
 import json
 from codecarbon import track_emissions
 import requests
-
 
 
 def respond(status_code, err, res=None):
@@ -38,10 +36,8 @@ def lambda_handler(event, context):
             raise ValueError('Unsupported path in request')
         
     except ValueError as e:
-        print("ValueError except")
         return respond(400, e, None)
     except Exception as e:
-        print("Exception except")
         return respond(500, e, None)    
 
 
