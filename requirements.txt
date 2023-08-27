@@ -1,0 +1,13 @@
+
+# PROD BUILD DEPENDENCIES
+requests==2.28.2
+urllib3==1.26.16
+codecarbon==2.2.3
+
+
+# STEPS TO BUILD 
+# pip3 install --platform manylinux2014_x86_64 --only-binary=:all: --implementation cp -r requirements.txt -t ./package-exploded 
+
+# cd package-exploded && 
+
+# zip -x "*__pycache__*" -x "dist-info" -r ../upload-lambda.zip *
