@@ -1,13 +1,6 @@
-#import boto3
+
 import json
-
-#dynamo = boto3.client('dynamodb')
-
 from codecarbon import track_emissions
-
-
-# pip3 install -r requirements.txt -t ./
-
 import requests
 
 
@@ -24,7 +17,6 @@ def respond(status_code, err, res=None):
     return response
 
 
-#@track_emissions(cloud_region="us-east-1")
 def lambda_handler(event, context):
     
     routes = {
@@ -32,43 +24,40 @@ def lambda_handler(event, context):
         '/memory': memory_route_handler,
     }
     
-    path = event['path']
-    #path = '/network'
-    httpMethod = event['httpMethod']
-    # httpMethod = 'GET'
+    try:
+        path = event['path']
+        httpMethod = event['httpMethod']
 
-    print("process method {} and path {}".format(httpMethod, path))
-    
-    if 'GET' == httpMethod and path in routes:
-        print("supported")
-        return respond(200, None, routes[path](path))
-    else:
-        print('Unsupported method "{}"'.format(path))
-        return respond(400, ValueError('Unsupported path in request'), None)
+        print("processing method {} and path {}".format(httpMethod, path))
+        
+        if 'GET' == httpMethod and path in routes:
+            print("supported")
+            return respond(200, None, routes[path](path))
+        else:
+            print('Throw Unsupported method "{}"'.format(path))
+            raise ValueError('Unsupported path in request')
+        
+    except ValueError as e:
+        print("ValueError except")
+        return respond(400, e, None)
+    except Exception as e:
+        print("Exception except")
+        return respond(500, e, None)    
+
 
 
 @track_emissions(cloud_region="us-east-1")
 def network_route_handler(path):
     
-    # how to downd with pip and package for upload to lambda 
-    # https://medium.com/@cziegler_99189/using-the-requests-library-in-aws-lambda-with-screenshots-fa36c4630d82
+    r = requests.get('https://httpbin.org/basic-auth/user/pass', auth=('user', 'pass'))
+        
+    return {
+        "result" : r.json(),
+        "path" : path
+    }
     
-    # TODO: set up .zip and download codecarbo and requests library
-    
-    try:
-        print("UPDATED VIA BUILD SCRIPTS")
-        r = requests.get('https://httpbin.org/basic-auth/user/pass', auth=('user', 'pass'))
 
-        
-        return {
-            "result" : r.json(),
-            "path" : path
-        }
-        
-    except Exception as e:
-        respond(500, ValueError('Error processing handler: {e}'.format(e=e)), None)
-    
-    
+@track_emissions(cloud_region="us-east-1")   
 def memory_route_handler(path):
     return {
         "result" : "some_memory_data",
