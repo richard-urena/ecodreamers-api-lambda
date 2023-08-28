@@ -52,8 +52,8 @@ def lambda_handler(event, context):
 
 
 @track_emissions(cloud_provider="aws", cloud_region="us-east-1", save_to_logger=True,
-                  logging_logger=logger, save_to_file=False, 
-                  emissions_endpoint=False, save_to_api=False, log_level="debug")
+                logging_logger=logger, save_to_file=False, 
+                emissions_endpoint=False, save_to_api=False, log_level="debug")
 def network_route_handler(path):
     r = requests.get('https://httpbin.org/basic-auth/user/pass', auth=('user', 'pass'))
         
@@ -64,8 +64,8 @@ def network_route_handler(path):
     
 
 @track_emissions(cloud_provider="aws", cloud_region="us-east-1", save_to_logger=True,
-                  logging_logger=logger, save_to_file=False, 
-                  emissions_endpoint=False, save_to_api=False, log_level="debug")
+                logging_logger=logger, save_to_file=False, 
+                emissions_endpoint=False, save_to_api=False, log_level="debug")
 def memory_route_handler(path):
     return {
         "result" : "some_memory_data",
