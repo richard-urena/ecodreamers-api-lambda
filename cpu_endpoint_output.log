@@ -1,0 +1,80 @@
+od GET and path /cpu
+[INFO]	2023-08-28T16:39:35.822Z	c8356468-18ee-42bb-9432-4f93a5359c1f	processing method GET and path /cpu
+supported
+[INFO]	2023-08-28T16:39:35.822Z	c8356468-18ee-42bb-9432-4f93a5359c1f	supported
+[codecarbon INFO @ 16:39:35] [setup] RAM Tracking...
+[codecarbon INFO @ 16:39:35] [setup] GPU Tracking...
+[codecarbon INFO @ 16:39:35] No GPU found.
+[codecarbon INFO @ 16:39:35] [setup] CPU Tracking...
+[codecarbon DEBUG @ 16:39:35] Not using PowerGadget, an exception occurred while instantiating IntelPowerGadget : Platform not supported by Intel Power Gadget
+[codecarbon DEBUG @ 16:39:35] Not using the RAPL interface, an exception occurred while instantiating IntelRAPL : Intel RAPL files not found at /sys/class/powercap/intel-rapl on linux
+[codecarbon WARNING @ 16:39:35] No CPU tracking mode found. Falling back on CPU constant mode.
+[codecarbon WARNING @ 16:39:45] We saw that you have a Intel(R) Xeon(R) Processor @ 2.50GHz but we don't know it. Please contact us.
+[codecarbon INFO @ 16:39:45] CPU Model on constant consumption mode: Intel(R) Xeon(R) Processor @ 2.50GHz
+[codecarbon INFO @ 16:39:45] >>> Tracker's metadata:
+[codecarbon INFO @ 16:39:45]   Platform system: Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26
+[codecarbon INFO @ 16:39:45]   Python version: 3.9.17
+[codecarbon INFO @ 16:39:45]   CodeCarbon version: 2.2.3
+[codecarbon INFO @ 16:39:45]   Available RAM : 0.183 GB
+[codecarbon INFO @ 16:39:45]   CPU count: 2
+[codecarbon INFO @ 16:39:45]   CPU model: Intel(R) Xeon(R) Processor @ 2.50GHz
+[codecarbon INFO @ 16:39:45]   GPU count: None
+[codecarbon INFO @ 16:39:45]   GPU model: None
+[codecarbon DEBUG @ 16:39:46] Not running on AWS
+[codecarbon DEBUG @ 16:39:47] Not running on Azure
+[codecarbon DEBUG @ 16:39:48] Not running on GCP
+[codecarbon INFO @ 16:39:48] 
+Graceful stopping: collecting and writing information.
+Please wait a few seconds...
+[codecarbon INFO @ 16:39:48] Energy consumed for RAM : 0.000000 kWh. RAM Power : 0.06868028640747072 W
+[codecarbon DEBUG @ 16:39:48] RAM : 0.07 W during 0.03 s [measurement time: 0.0193]
+[codecarbon INFO @ 16:39:48] Energy consumed for all CPUs : 0.000001 kWh. Total CPU Power : 42.5 W
+[codecarbon DEBUG @ 16:39:48] CPU : 42.50 W during 0.05 s [measurement time: 0.0001]
+[codecarbon INFO @ 16:39:48] 0.000001 kWh of electricity used since the beginning.
+[codecarbon DEBUG @ 16:39:48] last_duration=0.05300164222717285
+------------------------
+[codecarbon DEBUG @ 16:39:48] EmissionsData(
+timestamp='2023-08-28T16:39:48', 
+project_name='codecarbon', 
+run_id='76e72d9b-17e2-4fc5-8158-8c4a495b58ea', 
+duration=0.05321049690246582, 
+emissions=2.312080785139766e-07, 
+emissions_rate=4.34515916921013e-06, 
+cpu_power=42.5, gpu_power=0.0, 
+ram_power=0.06868028640747072, 
+cpu_energy=6.257138318485685e-07, 
+gpu_energy=0, 
+ram_energy=6.382295202911338e-10, 
+energy_consumed=6.263520613688597e-07, 
+country_name='United States', 
+country_iso_code='USA', 
+region='virginia', 
+cloud_provider='', 
+cloud_region='', 
+os='Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26', 
+python_version='3.9.17', 
+codecarbon_version='2.2.3', 
+cpu_count=2, 
+cpu_model='Intel(R) Xeon(R) Processor @ 2.50GHz', 
+gpu_count=None, 
+gpu_model=None, 
+longitude=-77.4903, 
+latitude=39.0469, 
+ram_total_size=0.18314743041992188, 
+tracking_mode='machine', 
+on_cloud='N', 
+pue=1.0)
+[codecarbon WARNING @ 16:39:48] graceful shutdown. Exceptions:
+[codecarbon WARNING @ 16:39:48] <class 'Exception'>
+Traceback (most recent call last):
+File "/var/task/codecarbon/core/util.py", line 18, in suppress
+yield
+File "/var/lang/lib/python3.9/contextlib.py", line 79, in inner
+return func(*args, **kwds)
+File "/var/task/codecarbon/emissions_tracker.py", line 444, in stop
+persistence.out(emissions_data)
+AttributeError: 'Logger' object has no attribute 'out'
+[codecarbon WARNING @ 16:39:48] stopping.
+[codecarbon INFO @ 16:39:48] Done!
+END RequestId: c8356468-18ee-42bb-9432-4f93a5359c1f
+REPORT RequestId: c8356468-18ee-42bb-9432-4f93a5359c1f	Duration: 13007.21 ms	Billed Duration: 13008 ms	Memory Size: 128 MB	Max Memory Used: 125 MB	Init Duration: 2606.83 ms	

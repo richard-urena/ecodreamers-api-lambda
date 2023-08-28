@@ -27,7 +27,7 @@ def respond(status_code, err, res=None):
 def lambda_handler(event, context):
     routes = {
         '/network': network_route_handler,
-        '/memory': memory_route_handler,
+        '/cpu': cpu_route_handler
     }
     
     try:
@@ -66,8 +66,19 @@ def network_route_handler(path):
 @track_emissions(cloud_provider="aws", cloud_region="us-east-1", save_to_logger=True,
                 logging_logger=logger, save_to_file=False, 
                 emissions_endpoint=False, save_to_api=False, log_level="debug")
-def memory_route_handler(path):
+def cpu_route_handler(path):
+
+    num = 10
+    r = factorial(num)
+
     return {
-        "result" : "some_memory_data",
+        "result" : "the factorial of num {} is {}".format(num, r),
         "path" : path
     }
+
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
