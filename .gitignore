@@ -1,3 +1,15 @@
 upload-lambda.zip
 package-exploded/
 .DS_Store
+
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!lambda_function.py
+!README.md
+!requirements.txt
+# etc...
+
+
