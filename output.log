@@ -1,0 +1,50 @@
+START RequestId: 9f24e769-4d57-444d-a80d-221bfc64ecad Version: $LATEST
+processing method GET and path /memory
+supported
+[codecarbon INFO @ 22:59:32] [setup] RAM Tracking...
+[codecarbon INFO @ 22:59:32] [setup] GPU Tracking...
+[codecarbon INFO @ 22:59:32] No GPU found.
+[codecarbon INFO @ 22:59:32] [setup] CPU Tracking...
+[codecarbon WARNING @ 22:59:32] No CPU tracking mode found. Falling back on CPU constant mode.
+[codecarbon WARNING @ 22:59:42] We saw that you have a Intel(R) Xeon(R) Processor @ 2.50GHz but we don't know it. Please contact us.
+[codecarbon INFO @ 22:59:42] CPU Model on constant consumption mode: Intel(R) Xeon(R) Processor @ 2.50GHz
+[codecarbon INFO @ 22:59:42] >>> Tracker's metadata:
+[codecarbon INFO @ 22:59:42]   Platform system: Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26
+[codecarbon INFO @ 22:59:42]   Python version: 3.9.17
+[codecarbon INFO @ 22:59:42]   CodeCarbon version: 2.2.3
+[codecarbon INFO @ 22:59:42]   Available RAM : 0.183 GB
+[codecarbon INFO @ 22:59:42]   CPU count: 2
+[codecarbon INFO @ 22:59:42]   CPU model: Intel(R) Xeon(R) Processor @ 2.50GHz
+[codecarbon INFO @ 22:59:42]   GPU count: None
+[codecarbon INFO @ 22:59:42]   GPU model: None
+[codecarbon INFO @ 22:59:46] 
+Graceful stopping: collecting and writing information.
+Please wait a few seconds...
+[codecarbon INFO @ 22:59:46] Energy consumed for RAM : 0.000000 kWh. RAM Power : 0.06868028640747072 W
+[codecarbon INFO @ 22:59:46] Energy consumed for all CPUs : 0.000001 kWh. Total CPU Power : 42.5 W
+[codecarbon INFO @ 22:59:46] 0.000001 kWh of electricity used since the beginning.
+[codecarbon WARNING @ 22:59:46] graceful shutdown. Exceptions:
+[codecarbon WARNING @ 22:59:46] <class 'Exception'>
+Traceback (most recent call last):
+File "/var/task/codecarbon/core/util.py", line 18, in suppress
+yield
+File "/var/lang/lib/python3.9/contextlib.py", line 79, in inner
+return func(*args, **kwds)
+File "/var/task/codecarbon/emissions_tracker.py", line 444, in stop
+persistence.out(emissions_data)
+File "/var/task/codecarbon/output.py", line 145, in out
+df.to_csv(self.save_file_path, index=False)
+File "/var/task/pandas/core/generic.py", line 3772, in to_csv
+return DataFrameRenderer(formatter).to_csv(
+File "/var/task/pandas/io/formats/format.py", line 1186, in to_csv
+csv_formatter.save()
+File "/var/task/pandas/io/formats/csvs.py", line 240, in save
+with get_handle(
+File "/var/task/pandas/io/common.py", line 859, in get_handle
+handle = open(
+OSError: [Errno 30] Read-only file system: './emissions.csv'
+[codecarbon WARNING @ 22:59:46] stopping.
+[codecarbon INFO @ 22:59:46] Done!
+END RequestId: 9f24e769-4d57-444d-a80d-221bfc64ecad
+REPORT RequestId: 9f24e769-4d57-444d-a80d-221bfc64ecad	Duration: 13696.87 ms	Billed Duration: 13697 ms	Memory Size: 128 MB	Max Memory Used: 121 MB	
+
