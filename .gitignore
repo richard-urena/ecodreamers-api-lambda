@@ -10,7 +10,7 @@ package-exploded/
 !lambda_function.py
 !README.md
 !requirements.txt
-!output.log
+!*_output.log
 # etc...
 
 

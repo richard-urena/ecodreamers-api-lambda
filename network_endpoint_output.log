@@ -1,0 +1,80 @@
+and path /network
+[INFO]	2023-08-28T04:23:46.267Z	789d7e18-dffd-448a-a636-6c2d2dfe36fe	processing method GET and path /network
+supported
+[INFO]	2023-08-28T04:23:46.267Z	789d7e18-dffd-448a-a636-6c2d2dfe36fe	supported
+[codecarbon INFO @ 04:23:46] [setup] RAM Tracking...
+[codecarbon INFO @ 04:23:46] [setup] GPU Tracking...
+[codecarbon INFO @ 04:23:46] No GPU found.
+[codecarbon INFO @ 04:23:46] [setup] CPU Tracking...
+[codecarbon DEBUG @ 04:23:46] Not using PowerGadget, an exception occurred while instantiating IntelPowerGadget : Platform not supported by Intel Power Gadget
+[codecarbon DEBUG @ 04:23:46] Not using the RAPL interface, an exception occurred while instantiating IntelRAPL : Intel RAPL files not found at /sys/class/powercap/intel-rapl on linux
+[codecarbon WARNING @ 04:23:46] No CPU tracking mode found. Falling back on CPU constant mode.
+[codecarbon WARNING @ 04:23:55] We saw that you have a Intel(R) Xeon(R) Processor @ 2.50GHz but we don't know it. Please contact us.
+[codecarbon INFO @ 04:23:55] CPU Model on constant consumption mode: Intel(R) Xeon(R) Processor @ 2.50GHz
+[codecarbon INFO @ 04:23:55] >>> Tracker's metadata:
+[codecarbon INFO @ 04:23:55]   Platform system: Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26
+[codecarbon INFO @ 04:23:55]   Python version: 3.9.17
+[codecarbon INFO @ 04:23:55]   CodeCarbon version: 2.2.3
+[codecarbon INFO @ 04:23:55]   Available RAM : 0.183 GB
+[codecarbon INFO @ 04:23:55]   CPU count: 2
+[codecarbon INFO @ 04:23:55]   CPU model: Intel(R) Xeon(R) Processor @ 2.50GHz
+[codecarbon INFO @ 04:23:55]   GPU count: None
+[codecarbon INFO @ 04:23:55]   GPU model: None
+[codecarbon DEBUG @ 04:23:56] Not running on AWS
+[codecarbon DEBUG @ 04:23:57] Not running on Azure
+[codecarbon DEBUG @ 04:23:58] Not running on GCP
+[codecarbon INFO @ 04:24:02] 
+Graceful stopping: collecting and writing information.
+Please wait a few seconds...
+[codecarbon INFO @ 04:24:02] Energy consumed for RAM : 0.000000 kWh. RAM Power : 0.06868028640747072 W
+[codecarbon DEBUG @ 04:24:02] RAM : 0.07 W during 3.87 s [measurement time: 0.0005]
+[codecarbon INFO @ 04:24:02] Energy consumed for all CPUs : 0.000046 kWh. Total CPU Power : 42.5 W
+[codecarbon DEBUG @ 04:24:02] CPU : 42.50 W during 3.87 s [measurement time: 0.0001]
+[codecarbon INFO @ 04:24:02] 0.000046 kWh of electricity used since the beginning.
+[codecarbon DEBUG @ 04:24:02] last_duration=3.869215965270996
+------------------------
+[codecarbon DEBUG @ 04:24:02] EmissionsData(
+timestamp='2023-08-28T04:24:02', 
+project_name='codecarbon', 
+run_id='03459b6e-d578-4260-8862-8062187b57a9', 
+duration=3.8694043159484863, 
+emissions=1.6888653718261464e-05, 
+emissions_rate=4.364665033491502e-06, 
+cpu_power=42.5, gpu_power=0.0, 
+ram_power=0.06868028640747072, 
+cpu_energy=4.567824403444926e-05, 
+gpu_energy=0, 
+ram_energy=7.380380992771053e-08, 
+energy_consumed=4.575204784437697e-05, 
+country_name='United States', 
+country_iso_code='USA', 
+region='virginia', 
+cloud_provider='', 
+cloud_region='', 
+os='Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26', 
+python_version='3.9.17', 
+codecarbon_version='2.2.3', 
+cpu_count=2, 
+cpu_model='Intel(R) Xeon(R) Processor @ 2.50GHz', 
+gpu_count=None, 
+gpu_model=None, 
+longitude=-77.4903, 
+latitude=39.0469, 
+ram_total_size=0.18314743041992188, 
+tracking_mode='machine', 
+on_cloud='N', 
+pue=1.0)
+[codecarbon WARNING @ 04:24:02] graceful shutdown. Exceptions:
+[codecarbon WARNING @ 04:24:02] <class 'Exception'>
+Traceback (most recent call last):
+File "/var/task/codecarbon/core/util.py", line 18, in suppress
+yield
+File "/var/lang/lib/python3.9/contextlib.py", line 79, in inner
+return func(*args, **kwds)
+File "/var/task/codecarbon/emissions_tracker.py", line 444, in stop
+persistence.out(emissions_data)
+AttributeError: 'Logger' object has no attribute 'out'
+[codecarbon WARNING @ 04:24:02] stopping.
+[codecarbon INFO @ 04:24:02] Done!
+END RequestId: 789d7e18-dffd-448a-a636-6c2d2dfe36fe
+REPORT RequestId: 789d7e18-dffd-448a-a636-6c2d2dfe36fe	Duration: 16672.49 ms	Billed Duration: 16673 ms	Memory Size: 128 MB	Max Memory Used: 125 MB	Init Duration: 2499.67 ms	
