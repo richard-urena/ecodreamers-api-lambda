@@ -18,6 +18,11 @@ handler = logging.StreamHandler(sys.stdout)
 
 logger.addHandler(handler)
 
+import os
+
+eco_dreamers_api_key = os.environ['API_KEY']
+eco_dreamers_experiment_id = os.environ['EXPERIMENT_ID']
+
 def respond(status_code, err, res=None):
     response = {
         'statusCode': status_code,
@@ -57,9 +62,16 @@ def lambda_handler(event, context):
         return respond(500, e, None)    
 
 
-@track_emissions(cloud_provider="aws", cloud_region="us-east-1", save_to_logger=True,
-                logging_logger=outputLogger, save_to_file=False, 
-                emissions_endpoint=False, save_to_api=False, log_level="debug")
+@track_emissions(experiment_id=eco_dreamers_experiment_id, 
+                api_key=eco_dreamers_api_key, 
+                save_to_api=True, 
+                cloud_provider="aws", 
+                cloud_region="us-east-1", 
+                save_to_logger=True,
+                logging_logger=outputLogger, 
+                save_to_file=False, 
+                emissions_endpoint=False, 
+                log_level="debug")
 def network_route_handler(path):
     r = requests.get('https://httpbin.org/basic-auth/user/pass', auth=('user', 'pass'))
         
@@ -69,9 +81,16 @@ def network_route_handler(path):
     }
     
 
-@track_emissions(cloud_provider="aws", cloud_region="us-east-1", save_to_logger=True,
-                logging_logger=outputLogger, save_to_file=False, 
-                emissions_endpoint=False, save_to_api=False, log_level="debug")
+@track_emissions(experiment_id=eco_dreamers_experiment_id, 
+                api_key=eco_dreamers_api_key, 
+                save_to_api=True, 
+                cloud_provider="aws", 
+                cloud_region="us-east-1", 
+                save_to_logger=True,
+                logging_logger=outputLogger, 
+                save_to_file=False, 
+                emissions_endpoint=False, 
+                log_level="debug")
 def cpu_route_handler(path):
 
     num = 10
