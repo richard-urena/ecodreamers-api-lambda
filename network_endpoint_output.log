@@ -1,80 +1,55 @@
-odel: None
-[codecarbon DEBUG @ 04:33:38] Not running on AWS
-[codecarbon DEBUG @ 04:33:39] Not running on Azure
-[codecarbon DEBUG @ 04:33:40] Not running on GCP
-[codecarbon INFO @ 04:33:55] Energy consumed for RAM : 0.000000 kWh. RAM Power : 0.06868028640747072 W
-[codecarbon DEBUG @ 04:33:55] RAM : 0.07 W during 15.01 s [measurement time: 0.0005]
-[codecarbon INFO @ 04:33:55] Energy consumed for all CPUs : 0.000177 kWh. Total CPU Power : 42.5 W
-[codecarbon DEBUG @ 04:33:55] CPU : 42.50 W during 15.01 s [measurement time: 0.0190]
-[codecarbon INFO @ 04:33:55] 0.000178 kWh of electricity used since the beginning.
-[codecarbon DEBUG @ 04:33:55] last_duration=15.01151156425476
-------------------------
-[codecarbon INFO @ 04:34:10] Energy consumed for RAM : 0.000001 kWh. RAM Power : 0.06868028640747072 W
-[codecarbon DEBUG @ 04:34:10] RAM : 0.07 W during 14.98 s [measurement time: 0.0004]
-[codecarbon INFO @ 04:34:10] Energy consumed for all CPUs : 0.000354 kWh. Total CPU Power : 42.5 W
-[codecarbon DEBUG @ 04:34:10] CPU : 42.50 W during 14.98 s [measurement time: 0.0001]
-[codecarbon INFO @ 04:34:10] 0.000355 kWh of electricity used since the beginning.
-[codecarbon DEBUG @ 04:34:10] last_duration=14.981223583221436
-------------------------
-[codecarbon INFO @ 04:34:25] Energy consumed for RAM : 0.000001 kWh. RAM Power : 0.06868028640747072 W
-[codecarbon DEBUG @ 04:34:25] RAM : 0.07 W during 15.00 s [measurement time: 0.0004]
-[codecarbon INFO @ 04:34:25] Energy consumed for all CPUs : 0.000531 kWh. Total CPU Power : 42.5 W
-[codecarbon DEBUG @ 04:34:25] CPU : 42.50 W during 15.00 s [measurement time: 0.0001]
-[codecarbon INFO @ 04:34:25] 0.000532 kWh of electricity used since the beginning.
-[codecarbon DEBUG @ 04:34:25] last_duration=15.000165224075317
-------------------------
-[codecarbon INFO @ 04:34:26] 
+decarbon INFO @ 01:30:33]   CPU count: 2
+[codecarbon INFO @ 01:30:33]   CPU model: Intel(R) Xeon(R) Processor @ 3.00GHz
+[codecarbon INFO @ 01:30:33]   GPU count: None
+[codecarbon INFO @ 01:30:33]   GPU model: None
+[codecarbon DEBUG @ 01:30:34] Not running on AWS
+[codecarbon DEBUG @ 01:30:35] Not running on Azure
+[codecarbon DEBUG @ 01:30:36] Not running on GCP
+[codecarbon INFO @ 01:30:37] 
 Graceful stopping: collecting and writing information.
 Please wait a few seconds...
-[codecarbon INFO @ 04:34:26] Energy consumed for RAM : 0.000001 kWh. RAM Power : 0.06868028640747072 W
-[codecarbon DEBUG @ 04:34:26] RAM : 0.07 W during 0.98 s [measurement time: 0.0004]
-[codecarbon INFO @ 04:34:26] Energy consumed for all CPUs : 0.000543 kWh. Total CPU Power : 42.5 W
-[codecarbon DEBUG @ 04:34:26] CPU : 42.50 W during 0.98 s [measurement time: 0.0001]
-[codecarbon INFO @ 04:34:26] 0.000544 kWh of electricity used since the beginning.
-[codecarbon DEBUG @ 04:34:26] last_duration=0.9793775081634521
+[codecarbon INFO @ 01:30:37] Energy consumed for RAM : 0.000000 kWh. RAM Power : 0.06868028640747072 W
+[codecarbon DEBUG @ 01:30:37] RAM : 0.07 W during 0.20 s [measurement time: 0.0192]
+[codecarbon INFO @ 01:30:37] Energy consumed for all CPUs : 0.000003 kWh. Total CPU Power : 42.5 W
+[codecarbon DEBUG @ 01:30:37] CPU : 42.50 W during 0.22 s [measurement time: 0.0001]
+[codecarbon INFO @ 01:30:37] 0.000003 kWh of electricity used since the beginning.
+[codecarbon DEBUG @ 01:30:37] last_duration=0.21961665153503418
 ------------------------
-[codecarbon DEBUG @ 04:34:26] EmissionsData(
-timestamp='2023-08-28T04:34:26', 
-project_name='codecarbon', 
-run_id='3ce17c28-74cb-42f4-8a77-de829b6735b1', 
-duration=45.99199414253235, 
-emissions=0.00020066340073522103, 
-emissions_rate=4.363007181496661e-06, 
-cpu_power=42.5, gpu_power=0.0, 
-ram_power=0.06868028640747072, 
-cpu_energy=0.0005427282805244129, 
-gpu_energy=0, 
-ram_energy=8.770099983121327e-07, 
-energy_consumed=0.0005436052905227249, 
-country_name='United States', 
-country_iso_code='USA', 
-region='virginia', 
-cloud_provider='', 
-cloud_region='', 
-os='Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26', 
-python_version='3.9.17', 
-codecarbon_version='2.2.3', 
-cpu_count=2, 
-cpu_model='Intel(R) Xeon(R) Processor @ 2.50GHz', 
-gpu_count=None, 
-gpu_model=None, 
-longitude=-77.4903, 
-latitude=39.0469, 
-ram_total_size=0.18314743041992188, 
-tracking_mode='machine', 
-on_cloud='N', 
-pue=1.0)
-[codecarbon WARNING @ 04:34:26] graceful shutdown. Exceptions:
-[codecarbon WARNING @ 04:34:26] <class 'Exception'>
-Traceback (most recent call last):
-File "/var/task/codecarbon/core/util.py", line 18, in suppress
-yield
-File "/var/lang/lib/python3.9/contextlib.py", line 79, in inner
-return func(*args, **kwds)
-File "/var/task/codecarbon/emissions_tracker.py", line 444, in stop
-persistence.out(emissions_data)
-AttributeError: 'Logger' object has no attribute 'out'
-[codecarbon WARNING @ 04:34:26] stopping.
-[codecarbon INFO @ 04:34:26] Done!
-END RequestId: 4a6b6678-ddc3-491c-a2cf-475f0adcbc85
-REPORT RequestId: 4a6b6678-ddc3-491c-a2cf-475f0adcbc85	Duration: 58673.53 ms	Billed Duration: 58674 ms	Memory Size: 128 MB	Max Memory Used: 123 MB	Init Duration: 2332.66 ms	
+[codecarbon DEBUG @ 01:30:37] EmissionsData(timestamp='2023-08-29T01:30:37', project_name='codecarbon', run_id='d4afc549-3804-49e0-b969-d5726fd70f0b', duration=0.2197859287261963, emissions=9.58463322086367e-07, emissions_rate=4.360894838178636e-06, cpu_power=42.5, gpu_power=0.0, ram_power=0.06868028640747072, cpu_energy=2.5926965806219315e-06, gpu_energy=0, ram_energy=3.819429518046036e-09, energy_consumed=2.5965160101399776e-06, country_name='United States', country_iso_code='USA', region='virginia', cloud_provider='', cloud_region='', os='Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26', python_version='3.9.17', codecarbon_version='2.2.3', cpu_count=2, cpu_model='Intel(R) Xeon(R) Processor @ 3.00GHz', gpu_count=None, gpu_model=None, longitude=-77.4903, latitude=39.0469, ram_total_size=0.18314743041992188, tracking_mode='machine', on_cloud='N', pue=1.0)
+{"timestamp": "2023-08-29T01:30:37", "project_name": "codecarbon", "run_id": "d4afc549-3804-49e0-b969-d5726fd70f0b", "duration": 0.2197859287261963, "emissions": 9.58463322086367e-07, "emissions_rate": 4.360894838178636e-06, "cpu_power": 42.5, "gpu_power": 0.0, "ram_power": 0.06868028640747072, "cpu_energy": 2.5926965806219315e-06, "gpu_energy": 0, "ram_energy": 3.819429518046036e-09, "energy_consumed": 2.5965160101399776e-06, "country_name": "United States", "country_iso_code": "USA", "region": "virginia", "cloud_provider": "", "cloud_region": "", "os": "Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26", "python_version": "3.9.17", "codecarbon_version": "2.2.3", "cpu_count": 2, "cpu_model": "Intel(R) Xeon(R) Processor @ 3.00GHz", "gpu_count": null, "gpu_model": null, "longitude": -77.4903, "latitude": 39.0469, "ram_total_size": 0.18314743041992188, "tracking_mode": "machine", "on_cloud": "N", "pue": 1.0}
+[INFO]	2023-08-29T01:30:37.214Z	98bda9a2-945b-450c-a986-706be6ba1741	
+{
+"timestamp": "2023-08-29T01:30:37",
+"project_name": "codecarbon",
+"run_id": "d4afc549-3804-49e0-b969-d5726fd70f0b", 
+"duration": 0.2197859287261963, 
+"emissions": 9.58463322086367e-07, 
+"emissions_rate": 4.360894838178636e-06, 
+"cpu_power": 42.5, 
+"gpu_power": 0.0, 
+"ram_power": 0.06868028640747072, 
+"cpu_energy": 2.5926965806219315e-06, 
+"gpu_energy": 0, 
+"ram_energy": 3.819429518046036e-09, 
+"energy_consumed": 2.5965160101399776e-06, 
+"country_name": "United States", 
+"country_iso_code": "USA", 
+"region": "virginia", 
+"cloud_provider": "", 
+"cloud_region": "", 
+"os": "Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26", 
+"python_version": "3.9.17", 
+"codecarbon_version": "2.2.3", 
+"cpu_count": 2, 
+"cpu_model": "Intel(R) Xeon(R) Processor @ 3.00GHz", 
+"gpu_count": null, 
+"gpu_model": null, 
+"longitude": -77.4903, 
+"latitude": 39.0469, 
+"ram_total_size": 0.18314743041992188, 
+"tracking_mode": "machine", 
+"on_cloud": "N", 
+"pue": 1.0}
+[codecarbon INFO @ 01:30:37] Done!
+END RequestId: 98bda9a2-945b-450c-a986-706be6ba1741
+REPORT RequestId: 98bda9a2-945b-450c-a986-706be6ba1741	Duration: 12598.73 ms	Billed Duration: 12599 ms	Memory Size: 128 MB	Max Memory Used: 124 MB	Init Duration: 2103.62 ms	
