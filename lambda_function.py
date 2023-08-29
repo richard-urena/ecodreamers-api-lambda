@@ -4,9 +4,16 @@ import requests
 import logging
 import sys
 
-logger = logging.getLogger(name="ecodreamers-api-lambda")
-logger.setLevel(logging.INFO)
+from codecarbon.output import LoggerOutput
 
+logger = logging.getLogger(name="ecodreamers-api-lambda")
+logger.setLevel(logging.DEBUG)
+
+if logger.hasHandlers():
+    logger.handlers.clear
+
+
+outputLogger = LoggerOutput(logger)
 
 handler = logging.StreamHandler(sys.stdout)
 
@@ -52,7 +59,7 @@ def lambda_handler(event, context):
 
 
 @track_emissions(cloud_provider="aws", cloud_region="us-east-1", save_to_logger=True,
-                logging_logger=logger, save_to_file=False, 
+                logging_logger=outputLogger, save_to_file=False, 
                 emissions_endpoint=False, save_to_api=False, log_level="debug")
 def network_route_handler(path):
     r = requests.get('https://httpbin.org/basic-auth/user/pass', auth=('user', 'pass'))
@@ -64,7 +71,7 @@ def network_route_handler(path):
     
 
 @track_emissions(cloud_provider="aws", cloud_region="us-east-1", save_to_logger=True,
-                logging_logger=logger, save_to_file=False, 
+                logging_logger=outputLogger, save_to_file=False, 
                 emissions_endpoint=False, save_to_api=False, log_level="debug")
 def cpu_route_handler(path):
 

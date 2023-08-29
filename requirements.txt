@@ -2,7 +2,7 @@
 # PROD BUILD DEPENDENCIES
 requests==2.28.2
 urllib3==1.26.16
-codecarbon==2.2.3
+codecarbon==2.3.1
 
 
 # STEPS TO BUILD 
