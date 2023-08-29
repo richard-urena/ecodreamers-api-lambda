@@ -24,6 +24,8 @@ eco_dreamers_api_key = os.environ['API_KEY']
 eco_dreamers_network_experiment_id = os.environ['NETWORK_EXPERIMENT_ID']
 eco_dreamers_cpu_experiment_id = os.environ['CPU_EXPERIMENT_ID']
 
+prometheus_push_gateway = os.environ['PROMETHEUS_PUSH_GATEWAY']
+
 def respond(status_code, err, res=None):
     response = {
         'statusCode': status_code,
@@ -46,7 +48,8 @@ def lambda_handler(event, context):
         path = event['path']
         httpMethod = event['httpMethod']
 
-        logger.info("processing method {} and path {}".format(httpMethod, path))
+        logger.info("processing method {} and path {} and sending to prometheus {}"
+                    .format(httpMethod, path, prometheus_push_gateway))
         
         if 'GET' == httpMethod and path in routes:
             logger.info("supported")
@@ -63,7 +66,10 @@ def lambda_handler(event, context):
         return respond(500, e, None)    
 
 
-@track_emissions(experiment_id=eco_dreamers_network_experiment_id, 
+@track_emissions(
+                save_to_prometheus=True,
+                prometheus_url=prometheus_push_gateway,
+                experiment_id=eco_dreamers_network_experiment_id, 
                 api_key=eco_dreamers_api_key, 
                 save_to_api=True, 
                 cloud_provider="aws", 
@@ -82,7 +88,10 @@ def network_route_handler(path):
     }
     
 
-@track_emissions(experiment_id=eco_dreamers_cpu_experiment_id, 
+@track_emissions(
+                save_to_prometheus=True,
+                prometheus_url=prometheus_push_gateway,
+                experiment_id=eco_dreamers_cpu_experiment_id, 
                 api_key=eco_dreamers_api_key, 
                 save_to_api=True, 
                 cloud_provider="aws", 
