@@ -3,7 +3,6 @@ from codecarbon import track_emissions
 import requests
 import logging
 import sys
-
 from codecarbon.output import LoggerOutput
 
 logger = logging.getLogger(name="ecodreamers-api-lambda")
