@@ -1,0 +1,115 @@
+INIT_START Runtime Version: python:3.9.v28	Runtime Version ARN: arn:aws:lambda:us-east-1::runtime:f4836a715e9c05bcad04e1cc2f311813789bc9d8d1f53ea5aa6b01855bd983f5
+START RequestId: 88672f41-a561-41ba-8245-e3a4a915027e Version: $LATEST
+processing method GET and path /network
+[INFO]	2023-08-29T03:13:50.942Z	88672f41-a561-41ba-8245-e3a4a915027e	processing method GET and path /network
+supported
+[INFO]	2023-08-29T03:13:50.943Z	88672f41-a561-41ba-8245-e3a4a915027e	supported
+[codecarbon INFO @ 03:13:50] [setup] RAM Tracking...
+[codecarbon INFO @ 03:13:50] [setup] GPU Tracking...
+[codecarbon INFO @ 03:13:50] No GPU found.
+[codecarbon INFO @ 03:13:50] [setup] CPU Tracking...
+[codecarbon DEBUG @ 03:13:50] Not using PowerGadget, an exception occurred while instantiating IntelPowerGadget : Platform not supported by Intel Power Gadget
+[codecarbon DEBUG @ 03:13:50] Not using the RAPL interface, an exception occurred while instantiating IntelRAPL : Intel RAPL files not found at /sys/class/powercap/intel-rapl on linux
+[codecarbon WARNING @ 03:13:50] No CPU tracking mode found. Falling back on CPU constant mode.
+[codecarbon WARNING @ 03:13:59] We saw that you have a Intel(R) Xeon(R) Processor @ 3.00GHz but we don't know it. Please contact us.
+[codecarbon INFO @ 03:13:59] CPU Model on constant consumption mode: Intel(R) Xeon(R) Processor @ 3.00GHz
+[codecarbon INFO @ 03:13:59] >>> Tracker's metadata:
+[codecarbon INFO @ 03:13:59]   Platform system: Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26
+[codecarbon INFO @ 03:13:59]   Python version: 3.9.17
+[codecarbon INFO @ 03:13:59]   CodeCarbon version: 2.2.3
+[codecarbon INFO @ 03:13:59]   Available RAM : 0.183 GB
+[codecarbon INFO @ 03:13:59]   CPU count: 2
+[codecarbon INFO @ 03:13:59]   CPU model: Intel(R) Xeon(R) Processor @ 3.00GHz
+[codecarbon INFO @ 03:13:59]   GPU count: None
+[codecarbon INFO @ 03:13:59]   GPU model: None
+[codecarbon DEBUG @ 03:14:01] Not running on AWS
+[codecarbon DEBUG @ 03:14:02] Not running on Azure
+[codecarbon DEBUG @ 03:14:03] Not running on GCP
+[codecarbon INFO @ 03:14:03] ApiClient Successfully registered your run on the API.
+Run ID: d4cd0267-b42f-4707-995f-2c14af817787
+Experiment ID: ab78c3aa-1899-4814-9cad-d96dc2443123
+[codecarbon INFO @ 03:14:08] 
+Graceful stopping: collecting and writing information.
+Please wait a few seconds...
+[codecarbon INFO @ 03:14:08] Energy consumed for RAM : 0.000000 kWh. RAM Power : 0.06868028640747072 W
+[codecarbon DEBUG @ 03:14:08] RAM : 0.07 W during 4.88 s [measurement time: 0.0070]
+[codecarbon INFO @ 03:14:08] Energy consumed for all CPUs : 0.000058 kWh. Total CPU Power : 42.5 W
+[codecarbon DEBUG @ 03:14:08] CPU : 42.50 W during 4.88 s [measurement time: 0.0001]
+[codecarbon INFO @ 03:14:08] 0.000058 kWh of electricity used since the beginning.
+[codecarbon DEBUG @ 03:14:08] last_duration=4.884562015533447
+------------------------
+[codecarbon DEBUG @ 03:14:08] EmissionsData(timestamp='2023-08-29T03:14:08', project_name='codecarbon', run_id='d4cd0267-b42f-4707-995f-2c14af817787', duration=4.884727239608765, emissions=2.13204705282892e-05, emissions_rate=4.364720788380567e-06, cpu_power=42.5, gpu_power=0.0, ram_power=0.06868028640747072, cpu_energy=5.766496823893654e-05, gpu_energy=0, ram_energy=9.305107672806421e-08, energy_consumed=5.7758019315664606e-05, country_name='United States', country_iso_code='USA', region='virginia', cloud_provider='', cloud_region='', os='Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26', python_version='3.9.17', codecarbon_version='2.2.3', cpu_count=2, cpu_model='Intel(R) Xeon(R) Processor @ 3.00GHz', gpu_count=None, gpu_model=None, longitude=-77.4903, latitude=39.0469, ram_total_size=0.18314743041992188, tracking_mode='machine', on_cloud='N', pue=1.0)
+{
+    "timestamp": "2023-08-29T03:14:08",
+    "project_name": "codecarbon",
+    "run_id": "d4cd0267-b42f-4707-995f-2c14af817787",
+    "duration": 4.884727239608765,
+    "emissions": 0.0000213204705282892,
+    "emissions_rate": 0.000004364720788380567,
+    "cpu_power": 42.5,
+    "gpu_power": 0,
+    "ram_power": 0.06868028640747072,
+    "cpu_energy": 0.00005766496823893654,
+    "gpu_energy": 0,
+    "ram_energy": 9.305107672806421e-8,
+    "energy_consumed": 0.000057758019315664606,
+    "country_name": "United States",
+    "country_iso_code": "USA",
+    "region": "virginia",
+    "cloud_provider": "",
+    "cloud_region": "",
+    "os": "Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26",
+    "python_version": "3.9.17",
+    "codecarbon_version": "2.2.3",
+    "cpu_count": 2,
+    "cpu_model": "Intel(R) Xeon(R) Processor @ 3.00GHz",
+    "gpu_count": null,
+    "gpu_model": null,
+    "longitude": -77.4903,
+    "latitude": 39.0469,
+    "ram_total_size": 0.18314743041992188,
+    "tracking_mode": "machine",
+    "on_cloud": "N",
+    "pue": 1
+}
+
+[INFO]	2023-08-29T03:14:08.687Z	88672f41-a561-41ba-8245-e3a4a915027e	
+{
+    "timestamp": "2023-08-29T03:14:08",
+    "project_name": "codecarbon",
+    "run_id": "d4cd0267-b42f-4707-995f-2c14af817787",
+    "duration": 4.884727239608765,
+    "emissions": 0.0000213204705282892,
+    "emissions_rate": 0.000004364720788380567,
+    "cpu_power": 42.5,
+    "gpu_power": 0,
+    "ram_power": 0.06868028640747072,
+    "cpu_energy": 0.00005766496823893654,
+    "gpu_energy": 0,
+    "ram_energy": 9.305107672806421e-8,
+    "energy_consumed": 0.000057758019315664606,
+    "country_name": "United States",
+    "country_iso_code": "USA",
+    "region": "virginia",
+    "cloud_provider": "",
+    "cloud_region": "",
+    "os": "Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26",
+    "python_version": "3.9.17",
+    "codecarbon_version": "2.2.3",
+    "cpu_count": 2,
+    "cpu_model": "Intel(R) Xeon(R) Processor @ 3.00GHz",
+    "gpu_count": null,
+    "gpu_model": null,
+    "longitude": -77.4903,
+    "latitude": 39.0469,
+    "ram_total_size": 0.18314743041992188,
+    "tracking_mode": "machine",
+    "on_cloud": "N",
+    "pue": 1
+}
+
+[codecarbon DEBUG @ 03:14:08] EmissionsData(timestamp='2023-08-29T03:14:08', project_name='codecarbon', run_id='d4cd0267-b42f-4707-995f-2c14af817787', duration=4.88550591468811, emissions=2.13204705282892e-05, emissions_rate=4.3640251185020406e-06, cpu_power=42.5, gpu_power=0.0, ram_power=0.06868028640747072, cpu_energy=5.766496823893654e-05, gpu_energy=0, ram_energy=9.305107672806421e-08, energy_consumed=5.7758019315664606e-05, country_name='United States', country_iso_code='USA', region='virginia', cloud_provider='', cloud_region='', os='Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26', python_version='3.9.17', codecarbon_version='2.2.3', cpu_count=2, cpu_model='Intel(R) Xeon(R) Processor @ 3.00GHz', gpu_count=None, gpu_model=None, longitude=-77.4903, latitude=39.0469, ram_total_size=0.18314743041992188, tracking_mode='machine', on_cloud='N', pue=1.0)
+[codecarbon DEBUG @ 03:14:09] ApiClient - Successful upload emission {'timestamp': '2023-08-29T03:14:08.688140+00:00', 'run_id': 'd4cd0267-b42f-4707-995f-2c14af817787', 'duration': 4, 'emissions_sum': 2.13204705282892e-05, 'emissions_rate': 4.3640251185020406e-06, 'cpu_power': 42.5, 'gpu_power': 0.0, 'ram_power': 0.06868028640747072, 'cpu_energy': 5.766496823893654e-05, 'gpu_energy': 0, 'ram_energy': 9.305107672806421e-08, 'energy_consumed': 5.7758019315664606e-05} to https://api.codecarbon.io/emission
+[codecarbon INFO @ 03:14:09] Done!
+END RequestId: 88672f41-a561-41ba-8245-e3a4a915027e
+REPORT RequestId: 88672f41-a561-41ba-8245-e3a4a915027e	Duration: 18225.11 ms	Billed Duration: 18226 ms	Memory Size: 128 MB	Max Memory Used: 125 MB	Init Duration: 2157.14 ms
