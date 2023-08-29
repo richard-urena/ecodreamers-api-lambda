@@ -21,7 +21,8 @@ logger.addHandler(handler)
 import os
 
 eco_dreamers_api_key = os.environ['API_KEY']
-eco_dreamers_experiment_id = os.environ['EXPERIMENT_ID']
+eco_dreamers_network_experiment_id = os.environ['NETWORK_EXPERIMENT_ID']
+eco_dreamers_cpu_experiment_id = os.environ['CPU_EXPERIMENT_ID']
 
 def respond(status_code, err, res=None):
     response = {
@@ -62,7 +63,7 @@ def lambda_handler(event, context):
         return respond(500, e, None)    
 
 
-@track_emissions(experiment_id=eco_dreamers_experiment_id, 
+@track_emissions(experiment_id=eco_dreamers_network_experiment_id, 
                 api_key=eco_dreamers_api_key, 
                 save_to_api=True, 
                 cloud_provider="aws", 
@@ -81,7 +82,7 @@ def network_route_handler(path):
     }
     
 
-@track_emissions(experiment_id=eco_dreamers_experiment_id, 
+@track_emissions(experiment_id=eco_dreamers_cpu_experiment_id, 
                 api_key=eco_dreamers_api_key, 
                 save_to_api=True, 
                 cloud_provider="aws", 
