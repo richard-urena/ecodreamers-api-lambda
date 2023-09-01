@@ -24,6 +24,9 @@ eco_dreamers_api_key = os.environ['API_KEY']
 eco_dreamers_network_experiment_id = os.environ['NETWORK_EXPERIMENT_ID']
 eco_dreamers_cpu_experiment_id = os.environ['CPU_EXPERIMENT_ID']
 
+cpu_endpoint_name  = "ecodreamers-aws-cpu"
+network_endpoint_name  = "ecodreamers-aws-network"
+
 prometheus_push_gateway = os.environ['PROMETHEUS_PUSH_GATEWAY']
 
 def respond(status_code, err, res=None):
@@ -67,6 +70,7 @@ def lambda_handler(event, context):
 
 
 @track_emissions(
+                project_name=network_endpoint_name,
                 save_to_prometheus=True,
                 prometheus_url=prometheus_push_gateway,
                 experiment_id=eco_dreamers_network_experiment_id, 
@@ -89,6 +93,7 @@ def network_route_handler(path):
     
 
 @track_emissions(
+                project_name=cpu_endpoint_name,
                 save_to_prometheus=True,
                 prometheus_url=prometheus_push_gateway,
                 experiment_id=eco_dreamers_cpu_experiment_id, 
