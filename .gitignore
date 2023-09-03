@@ -11,6 +11,7 @@ package-exploded/
 !README.md
 !requirements.txt
 !*_output.log
+!*.postman_collection.json
 # etc...
 
 

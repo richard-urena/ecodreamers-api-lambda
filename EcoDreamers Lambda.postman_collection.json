@@ -1,0 +1,556 @@
+{
+	"info": {
+		"_postman_id": "4e18eee0-c040-4336-8b89-64d77c2aa863",
+		"name": "EcoDreamers Lambda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29103182"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"timestamp\": \"2023-08-29T01:30:37\",\n\"project_name\": \"test-two-ecodreamers-api-lambda\",\n\"run_id\": \"d4afc549-3804-49e0-b969-d5726fd70f0b\", \n\"duration\": 1.2197859287261963, \n\"emissions_sum\": 9.58463322086367e-07, \n\"emissions\": 9.58463322086367e-07, \n\"emissions_rate\": 4.360894838178636e-06, \n\"cpu_power\": 42.5, \n\"gpu_power\": 0.0, \n\"ram_power\": 0.06868028640747072, \n\"cpu_energy\": 2.5926965806219315e-06, \n\"gpu_energy\": 0, \n\"ram_energy\": 3.819429518046036e-09, \n\"energy_consumed\": 2.5965160101399776e-06, \n\"country_name\": \"United States\", \n\"country_iso_code\": \"USA\", \n\"region\": \"virginia\", \n\"cloud_provider\": \"aws\", \n\"cloud_region\": \"us-east-1\", \n\"os\": \"Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26\", \n\"python_version\": \"3.9.17\", \n\"codecarbon_version\": \"2.2.3\", \n\"cpu_count\": 2, \n\"cpu_model\": \"Intel(R) Xeon(R) Processor @ 3.00GHz\", \n\"gpu_count\": null, \n\"gpu_model\": null, \n\"longitude\": -77.4903, \n\"latitude\": 39.0469, \n\"ram_total_size\": 0.18314743041992188, \n\"tracking_mode\": \"machine\", \n\"on_cloud\": \"Y\", \n\"pue\": 1.0,\n\"experiment_id\": \"ab78c3aa-1899-4814-9cad-d96dc2443123\"\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/emission",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"emission"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission Output from py",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"timestamp\": \"2023-08-29T02:17:15.160640+00:00\",\n    \"experiment_id\": \"5b0fa12a-3dd7-45bb-9766-cc326314d9f1\",\n    \"os\": \"Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26\",\n    \"python_version\": \"3.9.17\",\n    \"codecarbon_version\": \"2.2.3\",\n    \"cpu_count\": 2,\n    \"cpu_model\": \"Intel(R) Xeon(R) Processor @ 2.50GHz\",\n    \"gpu_count\": null,\n    \"gpu_model\": null,\n    \"longitude\": -77.2,\n    \"latitude\": 38.7,\n    \"region\": null,\n    \"provider\": null,\n    \"ram_total_size\": 0.18314743041992188,\n    \"tracking_mode\": \"machine\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/emission",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"emission"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission Teams",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"timestamp\": \"2023-08-29T02:17:15.160640+00:00\",\n    \"experiment_id\": \"5b0fa12a-3dd7-45bb-9766-cc326314d9f1\",\n    \"os\": \"Linux-4.14.255-318-256.530.amzn2.x86_64-x86_64-with-glibc2.26\",\n    \"python_version\": \"3.9.17\",\n    \"codecarbon_version\": \"2.2.3\",\n    \"cpu_count\": 2,\n    \"cpu_model\": \"Intel(R) Xeon(R) Processor @ 2.50GHz\",\n    \"gpu_count\": null,\n    \"gpu_model\": null,\n    \"longitude\": -77.2,\n    \"latitude\": 38.7,\n    \"region\": null,\n    \"provider\": null,\n    \"ram_total_size\": 0.18314743041992188,\n    \"tracking_mode\": \"machine\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/teams",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission Create TEam",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"EcoDreamers\",\n    \"description\": \"EcoDreamers\",\n    \"organization_id\": \"fa6ecee0-120c-4f80-9851-541bcb5f7e8c\",\n    //\"id\": \"02dc3f01-ffd5-4d74-be6e-1775866b940a\",\n    //\"api_key\": \"ltXL-fpqKFcvySp6t_BbJQ\",\n    \"projects\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/team",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"team"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission Get orgs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"EcoDreamers\",\n    \"description\": \"EcoDreamers\",\n    //\"organization_id\": \"e52fe339-164d-4c2b-a8c0-f562dfce066d\",\n    //\"id\": \"02dc3f01-ffd5-4d74-be6e-1775866b940a\",\n    //\"api_key\": \"ltXL-fpqKFcvySp6t_BbJQ\",\n    \"projects\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/organizations",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"organizations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission Create Org",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"E2\",\n    \"description\": \"\"\n    //\"id\": \"d9741fcd-6d35-4915-b74f-dd566a09ac95\",\n    //\"api_key\": \"PC2f8Pqw2mSVH25NEGExJg\",\n    //\"teams\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/organization",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"organization"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission Get Projects",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"EcoDreamers\",\n    \"description\": \"EcoDreamers\",\n    //\"organization_id\": \"e52fe339-164d-4c2b-a8c0-f562dfce066d\",\n    //\"id\": \"02dc3f01-ffd5-4d74-be6e-1775866b940a\",\n    //\"api_key\": \"ltXL-fpqKFcvySp6t_BbJQ\",\n    \"projects\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/projects/team/44b776fe-ca46-468f-9b6a-3e0ee209da04",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"projects",
+						"team",
+						"44b776fe-ca46-468f-9b6a-3e0ee209da04"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission Create project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"EcoDreamers Project Mod 3\",\n    \"description\": \"EcoDreamers Project Mod 3\",\n    \"team_id\": \"44b776fe-ca46-468f-9b6a-3e0ee209da04\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/project",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission Create Network Experiment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"EcoDreamers Project Mod 3 Run on AWS\",\n    \"description\": \"EcoDreamers Project Mod 3 Run on AWS\",\n    \"timestamp\": \"2023-08-29T02:17:15.160640+00:00\",\n    \"country_name\": \"US\",\n    \"country_iso_code\": \"US\",\n    \"region\": \"US\",\n    \"on_cloud\": true,\n    \"cloud_provider\": \"aws\",\n    \"cloud_region\": \"us-east-1b\",\n    \"project_id\": \"96cd4561-050c-4a20-a0bb-05326ba311bb\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/experiment",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"experiment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission Create CPU Experiment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"EcoDreamers Project Mod 3 Run on AWS CPU ROUTE\",\n    \"description\": \"EcoDreamers Project Mod 3 Run on AWS CPU ROUTE\",\n    \"timestamp\": \"2023-08-29T02:17:15.160640+00:00\",\n    \"country_name\": \"US\",\n    \"country_iso_code\": \"US\",\n    \"region\": \"US\",\n    \"on_cloud\": true,\n    \"cloud_provider\": \"aws\",\n    \"cloud_region\": \"us-east-1b\",\n    \"project_id\": \"96cd4561-050c-4a20-a0bb-05326ba311bb\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/experiment",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"experiment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission Read Network Experiment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"EcoDreamers Project Mod 3 Run on AWS\",\n    \"description\": \"EcoDreamers Project Mod 3 Run on AWS\",\n    \"timestamp\": \"2023-08-29T02:17:15.160640+00:00\",\n    \"country_name\": \"US\",\n    \"country_iso_code\": \"US\",\n    \"region\": \"US\",\n    \"on_cloud\": true,\n    \"cloud_provider\": \"aws\",\n    \"cloud_region\": \"us-east-1b\",\n    \"project_id\": \"96cd4561-050c-4a20-a0bb-05326ba311bb\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/experiment/ab78c3aa-1899-4814-9cad-d96dc2443123",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"experiment",
+						"ab78c3aa-1899-4814-9cad-d96dc2443123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission Read CPU Experiment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"EcoDreamers Project Mod 3 Run on AWS\",\n    \"description\": \"EcoDreamers Project Mod 3 Run on AWS\",\n    \"timestamp\": \"2023-08-29T02:17:15.160640+00:00\",\n    \"country_name\": \"US\",\n    \"country_iso_code\": \"US\",\n    \"region\": \"US\",\n    \"on_cloud\": true,\n    \"cloud_provider\": \"aws\",\n    \"cloud_region\": \"us-east-1b\",\n    \"project_id\": \"96cd4561-050c-4a20-a0bb-05326ba311bb\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/experiment/02d82ff2-bf82-464c-be83-ff15513e81d6",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"experiment",
+						"02d82ff2-bf82-464c-be83-ff15513e81d6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission Runs By Experiment Network",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"EcoDreamers Project Mod 3 Run on AWS\",\n    \"description\": \"EcoDreamers Project Mod 3 Run on AWS\",\n    \"timestamp\": \"2023-08-29T02:17:15.160640+00:00\",\n    \"country_name\": \"US\",\n    \"country_iso_code\": \"US\",\n    \"region\": \"US\",\n    \"on_cloud\": true,\n    \"cloud_provider\": \"aws\",\n    \"cloud_region\": \"us-east-1b\",\n    \"project_id\": \"96cd4561-050c-4a20-a0bb-05326ba311bb\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/runs/experiment/ab78c3aa-1899-4814-9cad-d96dc2443123",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"runs",
+						"experiment",
+						"ab78c3aa-1899-4814-9cad-d96dc2443123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission Runs By Experiment CPU",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"EcoDreamers Project Mod 3 Run on AWS\",\n    \"description\": \"EcoDreamers Project Mod 3 Run on AWS\",\n    \"timestamp\": \"2023-08-29T02:17:15.160640+00:00\",\n    \"country_name\": \"US\",\n    \"country_iso_code\": \"US\",\n    \"region\": \"US\",\n    \"on_cloud\": true,\n    \"cloud_provider\": \"aws\",\n    \"cloud_region\": \"us-east-1b\",\n    \"project_id\": \"96cd4561-050c-4a20-a0bb-05326ba311bb\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/runs/experiment/02d82ff2-bf82-464c-be83-ff15513e81d6",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"runs",
+						"experiment",
+						"02d82ff2-bf82-464c-be83-ff15513e81d6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission Runs Sums",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"EcoDreamers Project Mod 3 Run on AWS\",\n    \"description\": \"EcoDreamers Project Mod 3 Run on AWS\",\n    \"timestamp\": \"2023-08-29T02:17:15.160640+00:00\",\n    \"country_name\": \"US\",\n    \"country_iso_code\": \"US\",\n    \"region\": \"US\",\n    \"on_cloud\": true,\n    \"cloud_provider\": \"aws\",\n    \"cloud_region\": \"us-east-1b\",\n    \"project_id\": \"96cd4561-050c-4a20-a0bb-05326ba311bb\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/runs/ab78c3aa-1899-4814-9cad-d96dc2443123/sums",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"runs",
+						"ab78c3aa-1899-4814-9cad-d96dc2443123",
+						"sums"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission Organization Sums",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"EcoDreamers Project Mod 3 Run on AWS\",\n    \"description\": \"EcoDreamers Project Mod 3 Run on AWS\",\n    \"timestamp\": \"2023-08-29T02:17:15.160640+00:00\",\n    \"country_name\": \"US\",\n    \"country_iso_code\": \"US\",\n    \"region\": \"US\",\n    \"on_cloud\": true,\n    \"cloud_provider\": \"aws\",\n    \"cloud_region\": \"us-east-1b\",\n    \"project_id\": \"96cd4561-050c-4a20-a0bb-05326ba311bb\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/organization/fa6ecee0-120c-4f80-9851-541bcb5f7e8c/sums",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"organization",
+						"fa6ecee0-120c-4f80-9851-541bcb5f7e8c",
+						"sums"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.codecarbon.io/emission Project Sums",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"EcoDreamers Project Mod 3 Run on AWS\",\n    \"description\": \"EcoDreamers Project Mod 3 Run on AWS\",\n    \"timestamp\": \"2023-08-29T02:17:15.160640+00:00\",\n    \"country_name\": \"US\",\n    \"country_iso_code\": \"US\",\n    \"region\": \"US\",\n    \"on_cloud\": true,\n    \"cloud_provider\": \"aws\",\n    \"cloud_region\": \"us-east-1b\",\n    \"project_id\": \"96cd4561-050c-4a20-a0bb-05326ba311bb\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.codecarbon.io/project/96cd4561-050c-4a20-a0bb-05326ba311bb/sums/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"codecarbon",
+						"io"
+					],
+					"path": [
+						"project",
+						"96cd4561-050c-4a20-a0bb-05326ba311bb",
+						"sums",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
