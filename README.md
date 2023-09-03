@@ -28,12 +28,14 @@ Our lambda's /memory endpoint consumes 0.000001 kWh for 1 execution. At this ene
 It would take 70K lambda executions on the /memory endpoint to consume the same as 1 ED light bulb for 1 hour. 
 
 
+
+```
+
 import boto3
 from boto3.dynamodb.types import TypeSerializer
 
 
 dynamo = boto3.client('dynamodb')
-
 
 
 output.py L: 289
@@ -78,3 +80,5 @@ def python_obj_to_dynamo_obj(python_obj: dict) -> dict:
         k: serializer.serialize(v)
         for k, v in python_obj.items()
     }
+
+```
