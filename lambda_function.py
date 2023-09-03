@@ -50,13 +50,15 @@ def lambda_handler(event, context):
     try:
         path = event['path']
         httpMethod = event['httpMethod']
+        queryStringParameters: dict = event['queryStringParameters']
+        counter = queryStringParameters.get('counter') or 1
 
         logger.info("processing method {} and path {} and sending to prometheus {}"
                     .format(httpMethod, path, prometheus_push_gateway))
         
         if 'GET' == httpMethod and path in routes:
             logger.info("supported")
-            return respond(200, None, routes[path](path))
+            return respond(200, None, routes[path](path, counter))
         else:
             logger.error('Throw Unsupported method "{}"'.format(path))
             raise ValueError('Unsupported path in request')
@@ -69,9 +71,23 @@ def lambda_handler(event, context):
         return respond(500, e, None)    
 
 
+def network_route_handler(path, counter):
+
+    responses = []
+
+    for n in range(counter):
+        response = network_call(n)
+        responses.append(response)
+
+    return {
+        "path" : path,
+        "responses" : responses
+    }
+
+
 @track_emissions(
                 project_name=network_endpoint_name,
-                save_to_prometheus=True,
+                save_to_prometheus=False,
                 prometheus_url=prometheus_push_gateway,
                 experiment_id=eco_dreamers_network_experiment_id, 
                 api_key=eco_dreamers_api_key, 
@@ -82,19 +98,19 @@ def lambda_handler(event, context):
                 logging_logger=outputLogger, 
                 save_to_file=False, 
                 emissions_endpoint=False, 
-                log_level="debug")
-def network_route_handler(path):
+                log_level="info")
+def network_call(index):
     r = requests.get('https://httpbin.org/basic-auth/user/pass', auth=('user', 'pass'))
         
     return {
-        "result" : r.json(),
-        "path" : path
+        "index"  : index,
+        "result" : r.json()
     }
     
 
 @track_emissions(
                 project_name=cpu_endpoint_name,
-                save_to_prometheus=True,
+                save_to_prometheus=False,
                 prometheus_url=prometheus_push_gateway,
                 experiment_id=eco_dreamers_cpu_experiment_id, 
                 api_key=eco_dreamers_api_key, 
@@ -105,7 +121,7 @@ def network_route_handler(path):
                 logging_logger=outputLogger, 
                 save_to_file=False, 
                 emissions_endpoint=False, 
-                log_level="debug")
+                log_level="info")
 def cpu_route_handler(path):
 
     num = 10

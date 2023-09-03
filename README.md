@@ -26,3 +26,45 @@ Our lambda's /memory endpoint consumes 0.000001 kWh for 1 execution. At this ene
 70K lambda executions == 0.07 kWh / 0.000001 kWh
 
 It would take 70K lambda executions on the /memory endpoint to consume the same as 1 ED light bulb for 1 hour. 
+
+
+import boto3
+from boto3.dynamodb.types import TypeSerializer
+
+
+dynamo = boto3.client('dynamodb')
+
+
+
+output.py L: 289
+
+class LoggerOutput(BaseOutput):
+    """
+    Send emissions data to a logger
+    """
+
+    def __init__(self, logger, severity=logging.INFO):
+        self.logger = logger
+        self.logging_severity = severity
+
+    def out(self, data: EmissionsData):
+        try:
+            logger.info("DynamoTest Configuring Dynamo .data: {}.".format(data))
+            data_dict = data.__dict__
+            logger.info("DynamoTest Configuring Dynamo data.__dict__: {}.".format(data_dict))
+
+            data_loaded_obj = json.loads(json.dumps(data_dict), parse_float=Decimal)
+
+            data_loaded_obj['cloud_provider'] = 'aws'
+            data_loaded_obj['cloud_region'] = 'us-east-1'
+
+            serialized_item = python_obj_to_dynamo_obj(data_loaded_obj)
+
+            logger.info("DynamoTest serialized_data {} .".format(serialized_item))
+
+            dynamo.put_item(TableName="emissions", Item=serialized_item)
+
+            payload = dataclasses.asdict(data)
+            self.logger.log(self.logging_severity, msg=json.dumps(payload))
+        except Exception as e:
+            logger.error(e, exc_info=True)
