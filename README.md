@@ -58,7 +58,7 @@ class LoggerOutput(BaseOutput):
             data_loaded_obj['cloud_provider'] = 'aws'
             data_loaded_obj['cloud_region'] = 'us-east-1'
             data_loaded_obj['on_cloud'] = 'Y'
-            
+
             serialized_item = python_obj_to_dynamo_obj(data_loaded_obj)
 
             logger.info("DynamoTest serialized_data {} .".format(serialized_item))
@@ -69,3 +69,12 @@ class LoggerOutput(BaseOutput):
             self.logger.log(self.logging_severity, msg=json.dumps(payload))
         except Exception as e:
             logger.error(e, exc_info=True)
+
+def python_obj_to_dynamo_obj(python_obj: dict) -> dict:
+    logger.info("DynamoTest python_obj_to_dynamo_obj with: {}.".format(python_obj))
+
+    serializer = TypeSerializer()
+    return {
+        k: serializer.serialize(v)
+        for k, v in python_obj.items()
+    }
