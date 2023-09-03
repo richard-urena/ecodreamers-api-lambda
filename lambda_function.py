@@ -108,6 +108,20 @@ def network_call(index):
     }
     
 
+
+def cpu_route_handler(path, counter):
+
+    responses = []
+
+    for n in range(counter):
+        response = cpu_call(n)
+        responses.append(response)
+
+    return {
+        "path" : path,
+        "responses" : responses
+    }
+
 @track_emissions(
                 project_name=cpu_endpoint_name,
                 save_to_prometheus=False,
@@ -122,7 +136,7 @@ def network_call(index):
                 save_to_file=False, 
                 emissions_endpoint=False, 
                 log_level="info")
-def cpu_route_handler(path):
+def cpu_call(path):
 
     num = 10
     r = factorial(num)
